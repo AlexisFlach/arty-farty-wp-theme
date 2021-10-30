@@ -33,3 +33,19 @@ register_sidebar( array(
 
 add_theme_support( 'custom-logo' );
 add_theme_support('title-tag');
+
+function create_posttype() {
+	register_post_type( 'portfolio',
+	  array(
+		'labels' => array(
+		  'name' => __( 'Portfolio' ),
+		  'singular_name' => __( 'Project' )
+		),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'portfolio'),
+	  )
+	);
+  }
+  add_action( 'init', 'create_posttype' );
+
