@@ -13,7 +13,6 @@ $about_title = get_field('about_title');
 $about_desc = get_field('about_description');
 $aboutImageArray = get_field('about_image');
 $aboutImage = $aboutImageArray['sizes']['medium'];
-
 ?>
 
   <section class="red-bg" id="hero">

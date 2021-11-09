@@ -48,4 +48,22 @@ function create_posttype() {
 	);
   }
   add_action( 'init', 'create_posttype' );
+  
+  function get_my_menu()
+
+{
+
+    return wp_get_nav_menu_items('main-menu');
+
+}
+
+
+add_action('rest_api_init', function () {
+
+    register_rest_route('wp/v2', 'menu', array(
+        'methods' => 'GET',
+        'callback' => 'get_my_menu',
+    ));
+
+});
 
